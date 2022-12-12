@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+            <variable
+                name="viewModel"
+                type="com.ycl.databinding7.ScoreVeiwModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:context=".jetpack.databind.demo7.SevenDataActivity">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ascore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@{String.valueOf(viewModel.getAscore())}"
+                android:textColor="@color/red"
+                android:textSize="30sp"
+                tools:text="10" />
+
+            <Button
+                android:id="@+id/aone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="@{()->viewModel.aplus(1)}"
+                android:text="加一分" />
+
+            <Button
+                android:id="@+id/atwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="@{()->viewModel.aplus(2)}"
+                android:text="加两分" />
+
+            <Button
+                android:id="@+id/athree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="@{()->viewModel.aplus(3)}"
+                android:text="加三分" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:onClick="@{()->viewModel.undo()}"
+                android:text="返回上一步" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/bscore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@{String.valueOf(viewModel.getBscore())}"
+                android:textColor="@color/teal_200"
+                android:textSize="30sp"
+                tools:text="18"
+                 />
+
+            <Button
+                android:id="@+id/bone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="@{()->viewModel.bplus(1)}"
+                android:text="加一分" />
+
+            <Button
+                android:id="@+id/btwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="@{()->viewModel.bplus(2)}"
+                android:text="加两分" />
+
+            <Button
+                android:id="@+id/bthree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="@{()->viewModel.bplus(3)}"
+                android:text="加三分" />
+
+
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="135dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:onClick="@{()->viewModel.restScore()}"
+                android:text="重置" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</layout>

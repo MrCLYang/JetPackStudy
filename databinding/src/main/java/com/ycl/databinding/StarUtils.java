@@ -1,0 +1,29 @@
+package com.ycl.databinding;
+
+import android.widget.Switch;
+
+public
+/**
+ *Time:2022/12/11
+ *Author:YCL
+ *Description:
+ */
+class StarUtils {
+    public static  String getStar(int star){
+
+            switch(star){
+                case 1:
+                    return "一星";
+                case 2:
+                    return "二星";
+                case 3:
+                    return "三星";
+                case 4:
+                    return "四星";
+                case 5:
+                    return "五星";
+            }
+            return "";
+
+    }
+}
