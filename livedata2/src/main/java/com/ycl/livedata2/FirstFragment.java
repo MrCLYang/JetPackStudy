@@ -24,6 +24,7 @@ public class FirstFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_first, container, false);
         seekBar = root.findViewById(R.id.seekBar);
         viewModel = new ViewModelProvider(getActivity(), new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication())).get(MyViewModel.class);
+        //通过观察者发现viewModel中的值发生了变化，将变化的值的给予seekbar实现状态逻辑改变
         viewModel.getProgress().observe(getActivity(), new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
@@ -34,6 +35,8 @@ public class FirstFragment extends Fragment {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                //seekBar的值发生变化，将变化值存储到viewModel中
+//                TODO 如何不使用viewModel；此处发生变化的值可以直接赋予Seekbar;但是其他地方就拿不到值了
                 viewModel.getProgress().setValue(progress);
             }
 
